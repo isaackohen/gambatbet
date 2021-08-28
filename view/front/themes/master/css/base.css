@@ -2280,7 +2280,7 @@ a.loginleft {
 	display:block!Important
 }
 header#header .logo img{
-	max-width:8rem;
+	max-width:2.4rem;
 	/*margin-top:10px;*/
 
 }
@@ -2909,11 +2909,11 @@ span.bodname {
 }
 
 .topmatchbg.bg.ag {
-    background: linear-gradient(0deg,#c4bfbfcc,#000000), url(../images/topmatchsav-min.jpg) no-repeat;
+    background: linear-gradient(0deg,#47474770,#000000), url(../images/topmatchsav-min.jpg) no-repeat;
     height: 180px;
     width: 100%;
     color: transparent;
-    margin-top: 10px;
+    margin-bottom: 10px;
     background-size: cover;
 }
 i#csuus {

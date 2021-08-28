@@ -1476,5 +1476,10 @@
   <phrase section="Affiliate_Panel" data="AFF_RECIPIENT_WILL_GET">Recipient will get</phrase>
   <phrase section="Affiliate_Panel" data="AFF_SEND_MONEY">Send Money</phrase>
 
+  <phrase section="New_Menu" data="MENU_SPORT">Sports</phrase>
+  <phrase section="New_Menu" data="MENU_LIVE_CASINO">Live Casino</phrase>
+  <phrase section="New_Menu" data="MENU_LUCK_MACHINE">Slots</phrase>
+  <phrase section="New_Menu" data="MENU_VIRTUAL_SPORT">Virtual Sports</phrase>
+  <phrase section="New_Menu" data="MENU_POKER">Poker</phrase>
 
 </LANGUAGE>

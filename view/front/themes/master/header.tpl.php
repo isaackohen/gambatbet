@@ -30,7 +30,7 @@ if (!defined("_YOYO"))
     <meta name="generator" content="Powered by Gambabet">
     <link rel="shortcut icon" href="<?php echo SITEURL; ?>/assets/favicon.ico" type="image/x-icon">
     <?php if (in_array(Core::$language, array("ar", "he"))): ?>
-        <link href="<?php echo THEMEURL . '/cache/' . Cache::cssCache(array('base_rtl.css','transition_rtl.css', 'button_rtl.css', 'divider_rtl.css', 'icon_rtl.css', 'flag_rtl.css', 'image_rtl.css', 'label_rtl.css', 'form_rtl.css', 'input_rtl.css', 'list_rtl.css','segment_rtl.css','card_rtl.css','table_rtl.css','dropdown_rtl.css','exchange_rtl.css','popup_rtl.css','statistic_rtl.css','datepicker_rtl.css','message_rtl.css','dimmer_rtl.css','modal_rtl.css','progress_rtl.css','accordion_rtl.css','item_rtl.css','feed_rtl.css','comment_rtl.css','editor_rtl.css','utility_rtl.css','style_rtl.css'), THEMEBASE);?>" rel="stylesheet" type="text/css">
+        <link href="<?php echo THEMEURL . '/cache/' . Cache::cssCache(array('base_rtl.css', 'transition_rtl.css', 'button_rtl.css', 'divider_rtl.css', 'icon_rtl.css', 'flag_rtl.css', 'image_rtl.css', 'label_rtl.css', 'form_rtl.css', 'input_rtl.css', 'list_rtl.css', 'segment_rtl.css', 'card_rtl.css', 'table_rtl.css', 'dropdown_rtl.css', 'exchange_rtl.css', 'popup_rtl.css', 'statistic_rtl.css', 'datepicker_rtl.css', 'message_rtl.css', 'dimmer_rtl.css', 'modal_rtl.css', 'progress_rtl.css', 'accordion_rtl.css', 'item_rtl.css', 'feed_rtl.css', 'comment_rtl.css', 'editor_rtl.css', 'utility_rtl.css', 'style_rtl.css'), THEMEBASE); ?>" rel="stylesheet" type="text/css">
     <?php else: ?>
         <link href="<?php echo THEMEURL . '/cache/' . Cache::cssCache(array('base.css', 'transition.css', 'button.css', 'divider.css', 'icon.css', 'flag.css', 'image.css', 'label.css', 'form.css', 'input.css', 'list.css', 'segment.css', 'card.css', 'table.css', 'dropdown.css', 'exchange.css', 'popup.css', 'statistic.css', 'datepicker.css', 'message.css', 'dimmer.css', 'modal.css', 'progress.css', 'accordion.css', 'item.css', 'feed.css', 'comment.css', 'editor.css', 'utility.css', 'style.css'), THEMEBASE); ?>" rel="stylesheet" type="text/css">
     <?php endif; ?>
@@ -60,12 +60,16 @@ if (!defined("_YOYO"))
             <ul class="topbarul">
                 <li class="lgoholder">
                     <a href="<?php echo SITEURL; ?>/" class="logo">
+                        <?php if(!Filter::isMobile()): ?>
                         <?php echo ($this->core->logo) ? '<img src="' . SITEURL . '/uploads/' . $this->core->logo . '" alt="' . $this->core->company . '">' : $this->core->company; ?>
+                        <?php else: ?>
+                           <img src="/uploads/mobile-logo.png" alt="GambaBet Logo">
+                        <?php endif; ?>
                     </a>
                 </li>
 
 
-                <li class="srbarr">
+                <!--<li class="srbarr">
                     <div class="wrap">
                         <div class="search">
                             <input type="text" class="searchTerm" placeholder="<?= Lang::$word->SEARCH_BY_EVENT_NAME; ?>">
@@ -74,7 +78,7 @@ if (!defined("_YOYO"))
                         </div>
                         <div id="resulting"></div>
                     </div>
-                </li>
+                </li>-->
 
 
                 <li class="usernotify">
@@ -107,10 +111,11 @@ if (!defined("_YOYO"))
                             // Append the requested resource location to the URL
                             $xurl .= $_SERVER['REQUEST_URI'];
                             ?>
-                            <a href="/login/?cref=<?php echo $xurl; ?>" class="joinuri"><i id="joncls" class="icon lock"></i> <?= Lang::$word->LOGIN; ?></a>
+                            <a href="/login/?cref=<?php echo $xurl; ?>" class="joinuri"><?= Lang::$word->LOGIN; ?>
+                            </a>
                         </div>
 
-                        <!--<div class="item" id="logjoin">
+                        <div class="item" id="logjoin">
                             <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
                                 $url = "https://";
                             else
@@ -121,9 +126,9 @@ if (!defined("_YOYO"))
                             // Append the requested resource location to the URL
                             $xurl .= $_SERVER['REQUEST_URI'];
                             ?>
-                            <a href="/login/?cref=<?php echo $xurl; ?>" class="joinuri"><i id="logcls" class="icon lock"></i> LOGIN
+                            <a href="/registration/?cref=<?php echo $xurl; ?>" class="joinuri"><?= Lang::$word->REGISTER; ?>
                             </a>
-                        </div>-->
+                        </div>
 
                         <?php include_once("__header_notification.php"); ?>
 
@@ -131,6 +136,26 @@ if (!defined("_YOYO"))
                     <?php endif; ?>
                     <?php //endif;?>
                 </li>
+
+                <?php if(!Filter::isMobile()): ?>
+                <li style="float: right">
+                    <a data-dropdown="#dropdown-langChange" class="yoyo mini secondary button">
+                        <div class="description">
+                            <span class="flag icon en" id="repcl"></span>
+                            <!--<span id="ltext" class="ttxt active"><?= Lang::$word->ENGLISH; ?> </span>-->
+                        </div>
+                        <i class="icon small chevron down" id="cvvr"></i>
+                    </a>
+                    <div class="yoyo small dropdown menu top-center" id="dropdown-langChange">
+                        <?php include_once('language_list.php'); ?>
+                    </div>
+                </li>
+
+                <li style="float: right">
+                    <label class="timer"></label>
+                </li>
+
+                <?php endif; ?>
 
             </ul>
 
@@ -141,6 +166,14 @@ if (!defined("_YOYO"))
 
 
     <style type="text/css">
+
+        label.timer {
+            color: #fff;
+            vertical-align: middle;
+            display: block;
+            padding-top: 8px;
+        }
+
         .To.Win.the.Toss {
             display: none;
         }
@@ -430,6 +463,12 @@ if (!defined("_YOYO"))
         },
         5000);
 
+
+    var d = new Date();
+    setInterval(function() {
+        d.setSeconds(d.getSeconds() + 1);
+        $('.timer').text((d.getHours() +':' + d.getMinutes() + ':' + d.getSeconds() ));
+    }, 1000);
 
     function triggerHtmlEvent(element, eventName) {
         var event;

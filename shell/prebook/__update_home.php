@@ -6,6 +6,9 @@ $btype = $_POST['btype'];
 
 require_once('../../init.php');
 ?>
+
+<?php require_once '../components/grid-header-prebook.php'; ?>
+
 <div class="toplvbhgh"><span class="_lt10"><?= Lang::$word->LIVE_HIGHLIGHTS; ?></span>
     <span class="_lt11"><i id="cmrr" class="icon camera alt"></i></span>
 </div>

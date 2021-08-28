@@ -722,11 +722,11 @@ a#nvvbk:hover {
 }
 
 .topmatchbg.bg {
-    background: linear-gradient(0deg, #0a0a0acc, #1d2322), url(../images/topmatchsav-min.jpg) no-repeat;
+    background: linear-gradient(0deg, #72727245, #1d2322), url(../images/topmatchsav-min.jpg) no-repeat;
     height: 180px;
     width: 100%;
     color: transparent;
-    margin-top: 10px;
+    margin-bottom: 10px;
     background-size: cover;
 }
 

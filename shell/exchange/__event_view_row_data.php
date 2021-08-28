@@ -13,22 +13,24 @@ $chips = $ucr['chips'];
 require_once ('../../init.php');
 
 ?>
+
+<div class="excol ileft">
+    <div class="sportscol">
+        <?php include_once('../../../../shell/exchange/top-horizontal-sports.php');?>
+    </div>
+</div>
+
+
 <div class="_row">
     <div class="_column _one">
-        <div class="presport-wrap" id="presidebar">
-            <div class="backbwrapper">
-                <a href="/">
-                    <i id="arrleft" class="icon long arrow left"></i> <i id="hhmoe" class="icon home"></i>
-                </a>
-                <span class="getEvn"></span>
-            </div>
-        </div>
-        <div class="setStats">
-            <?php include_once("__stats.php"); ?>
-        </div>
 
+        <style>
+            .w-100 {
+                width: 100%;
+            }
+        </style>
 
-        <div class="_rowdivider">
+        <div class="_rowdivider w-100">
             <?php if ($device == 'desktop'): ?>
                 <!-- FOR FILTER BY SPORTS (SIDEBAR) -->
                 <div class="_divsp tleft">
@@ -76,6 +78,11 @@ require_once ('../../init.php');
 
 
             <div class="_divsp tright">
+
+                <div class="setStats">
+                    <?php include_once("__stats.php"); ?>
+                </div>
+
                 <div class="toplvbhgh"><span class="_lt10"><?= Lang::$word->LIVE_MARKETS; ?></span>
                     <span class="_lt11"><i id="cmrr" class="icon camera alt"></i></span></div>
                 <ul class="splivehome">

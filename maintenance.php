@@ -98,7 +98,7 @@
     </div>
   </div>
 </main>
-<p id="mfooter">Copyright &copy;<?php echo date('Y') . ' '. App::Core()->company;?> Powered by CRIC INT. v.<?php echo App::Core()->yoyov;?></p>
+<p id="mfooter">Copyright &copy;<?php echo date('Y') . ' '. App::Core()->company;?> Powered by GambaBet INT. v.<?php echo App::Core()->yoyov;?></p>
 <script src="<?php echo SITEURL;?>/assets/countdown.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {

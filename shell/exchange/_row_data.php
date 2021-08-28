@@ -10,7 +10,7 @@ $ucr = mysqli_fetch_assoc(mysqli_query($conn, "SELECT chips, promo FROM users WH
 $bons_balance = $ucr['promo'];
 $chips = $ucr['chips'];
 
-require_once ('../../init.php');
+require_once('../../init.php');
 
 ?>
 
@@ -18,17 +18,8 @@ require_once ('../../init.php');
     <div class="_column _one">
         <?php include_once('top-horizontal-sports.php'); ?>
 
-        <?php $query = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM af_inplay_bet_events JOIN af_inplay_bet_events_cats ON af_inplay_bet_events.bet_event_id=af_inplay_bet_events_cats.bet_event_id WHERE af_inplay_bet_events.is_active=1 ORDER BY af_inplay_bet_events.feat=1, af_inplay_bet_events.spid ASC LIMIT 1"));
 
-        $cat_id = $query['bet_event_cat_id'];
-        $fnr = explode(':', $query['ss']);
-        $ss_home = $fnr[0];
-        $ss_away = $fnr[1];
-        $tnr = explode('-', $query['bet_event_name']);
-        $ts_home = $tnr[0];
-        $ts_away = $tnr[1];
-        ?>
-
+        <?php if(false): ?>
         <div class="topmatchbg bg">
 		  <span class="holder">
   <span class="livenow">
@@ -42,7 +33,7 @@ require_once ('../../init.php');
 			<div class="topshss tp"> <span class="lltm"><i id="ixhome" class="icon shirt"></i> <?php echo substr($ts_home, 0, 24); ?></span> <span class="rrtm"><?php echo $ss_home; ?></span></div>
 			<div class="topshss btm"> <span class="lltm"><i id="ixaway" class="icon shirt"></i> <?php echo substr($ts_away, 0, 24); ?></span> <span class="rrtm"><?php echo $ss_away; ?></span></div>
 			</div>
-			
+
 			<ul class="showdra">
 			<?php $getCon = mysqli_query($conn, "SELECT bet_option_name, bet_option_odd FROM af_inplay_bet_options WHERE bet_event_cat_id=$cat_id LIMIT 3");
 
@@ -57,12 +48,12 @@ require_once ('../../init.php');
             } ?>
 			</ul>
 			</a>
-
-
         </div>
+        <?php endif; ?>
 
 
         <div class="_rowdivider">
+
             <?php if ($device == 'desktop'): ?>
                 <!-- FOR FILTER BY SPORTS (SIDEBAR) -->
                 <div class="_divsp tleft">
@@ -158,6 +149,10 @@ require_once ('../../init.php');
 
 
             <div class="_divsp tright">
+
+                <?php include_once '../components/grid-header-sport.php'; ?>
+
+
                 <div class="toplvbhgh"><span class="_lt10"><?= Lang::$word->LIVE_HIGHLIGHTS; ?></span>
                     <span class="_lt11"><i id="cmrr" class="icon camera alt"></i></span>
                 </div>
@@ -231,9 +226,11 @@ require_once ('../../init.php');
 
 
                 <ul class="splivehome">
-                    <li class="toplvblt cact"><i id="lvice" class="icon icecream"></i> <?= Lang::$word->LIVE_EVENTS; ?></li>
+                    <li class="toplvblt cact"><i id="lvice" class="icon icecream"></i> <?= Lang::$word->LIVE_EVENTS; ?>
+                    </li>
                     <a class="toplvblts" href="/sportsbook-prematch/">
-                        <li class="toplvblt"><i id="rzcmg" class="icon resize"></i> <?= Lang::$word->UPCOMING_EVENTS; ?></li>
+                        <li class="toplvblt"><i id="rzcmg" class="icon resize"></i> <?= Lang::$word->UPCOMING_EVENTS; ?>
+                        </li>
                     </a>
                 </ul>
 

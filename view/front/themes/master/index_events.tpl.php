@@ -18,7 +18,7 @@
   } ?>
 
 <main<?php echo Content::pageBg();?>>
-<?php //include_once('top-horizontal-sports.php');?>
+<?php include_once('top-horizontal-sports.php');?>
 <div class="_homeIndex">
 
 		

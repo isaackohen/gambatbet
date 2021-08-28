@@ -187,7 +187,7 @@
     <phrase section="Global" data="RATING">Rating</phrase>
     <phrase section="Global" data="REFRESH">Refresh</phrase>
     <phrase section="Global" data="RESET">Reset</phrase>
-    <phrase section="Global" data="REGISTER">Register</phrase>
+    <phrase section="Global" data="REGISTER">הרשמה</phrase>
     <phrase section="Global" data="REGISTERED">Registered</phrase>
     <phrase section="Global" data="REMOVE">Remove</phrase>
     <phrase section="Global" data="RENAME">Rename</phrase>
@@ -1481,5 +1481,11 @@
     <phrase section="Affiliate_Panel" data="AFF_SUCCESSFULLY_TRANSFERRED">העברה בוצעה בהצלחה</phrase>
     <phrase section="Affiliate_Panel" data="AFF_RECIPIENT_WILL_GET">השקן יקבל</phrase>
     <phrase section="Affiliate_Panel" data="AFF_SEND_MONEY">שלח כסף</phrase>
+
+    <phrase section="New_Menu" data="MENU_SPORT">ספורט</phrase>
+    <phrase section="New_Menu" data="MENU_LIVE_CASINO">קזינו חי</phrase>
+    <phrase section="New_Menu" data="MENU_LUCK_MACHINE">מכונות מזל</phrase>
+    <phrase section="New_Menu" data="MENU_VIRTUAL_SPORT">ספורט וירטואלי</phrase>
+    <phrase section="New_Menu" data="MENU_POKER">פוקר</phrase>
 
 </language>

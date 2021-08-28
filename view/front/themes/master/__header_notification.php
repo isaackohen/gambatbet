@@ -22,14 +22,14 @@
 				</br>
 				<hr>
 			<span class="locktime">
-				<?= Lang::$word->YOUR_LOCAL_TIME_HAS_BEEN_SET_AT; ?></br>
-				<b><?php $lt = $_COOKIE['localtime']; echo $lt/60;?> <?= Lang::$word->HOURS_GMT; ?></b></span>
+				<?= Lang::$word->YOUR_LOCAL_TIME_HAS_BEEN_SET_AT; ?> </br>
+                <b class="timer"></b> (<b><?php $lt = $_COOKIE['localtime']; echo $lt/60;?> <?= Lang::$word->HOURS_GMT; ?></b>)</span>
 				</br>
 				</br>
 				<hr>
 				
 				<!--Lang Switcher-->
-        <?php if($this->core->showlang):?>
+        <?php if(Filter::isMobile()): ?>
         <div class="columns shrink">
           <a data-dropdown="#dropdown-langChange" class="yoyo mini secondary button">
           <div class="description">
