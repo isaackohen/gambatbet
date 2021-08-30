@@ -1,4 +1,11 @@
 <?php include_once("../db.php");
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$tk = "94840-yL6oCP0lnJl8xM";
+
 	function pull_all_event_ids($conn){
 		$query="SELECT bet_event_id FROM af_pre_bet_events";
 		$event_ids=mysqli_query($conn,$query);
@@ -68,6 +75,9 @@
 			
 			
 			$homeurl=file_get_contents('https://assets.b365api.com/images/team/m/'.$img_home.'.png');
+			echo '<pre>';
+			echo 'https://assets.b365api.com/images/team/m/'.$img_home.'.png';
+			echo '</pre>';
 			$h_put_file = $_SERVER['DOCUMENT_ROOT'] . '/uploads/jersey/'.$img_home.'.png';echo '</br>';
 			$h_upload =file_put_contents($h_put_file, $homeurl);
 			

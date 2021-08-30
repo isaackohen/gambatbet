@@ -17,20 +17,10 @@ require_once('../../init.php');
 ?>
 <div class="_row">
     <div class="_column _one">
-        <div class="presport-wrap" id="presidebar">
-            <div class="backbwrapper">
-                <a href="/sportsbook-prematch/">
-                    <i id="arrleft" class="icon long arrow left"></i>
-                </a>
-                <span class="getEvn"></span>
-            </div>
-        </div>
-        <div class="setStats">
-            <?php include_once("__stats.php"); ?>
-        </div>
+        <?php require_once('../exchange/top-horizontal-sports.php'); ?>
 
 
-        <div class="_rowdivider">
+        <div class="_rowdivider" style="width: 100%;">
             <?php $ge = mysqli_query($conn, "SELECT event_id, event_name,spid,sname,cc FROM af_pre_bet_events WHERE spid=" . $_POST['spid'] . " AND UNIX_TIMESTAMP() < (deadline - $dline) GROUP BY event_id ORDER BY deadline ASC");
             ?>
             <?php if ($device == 'desktop'): ?>
@@ -94,6 +84,11 @@ require_once('../../init.php');
 
 
             <div class="_divsp tright">
+
+                <div class="setStats">
+                    <?php include_once("__stats.php"); ?>
+                </div>
+
                 <div class="toplvbhgh"><span class="_lt10"><?= Lang::$word->LIVE_MARKETS; ?></span> <span class="_lt11"><i id="cmrr" class="icon camera alt"></i></span>
                 </div>
                 <ul class="splivehome">

@@ -37,6 +37,7 @@ if (file_exists($lang_file)) {
 
 // ---------------------------------------------------------------------------------------------------------------------
 
+// SELECT DISTINCT bet_event_cat_name FROM af_pre_bet_events_cats
 
 $data = mysqli_query($conn, "SELECT `bet_event_name`, `event_name` FROM af_pre_bet_events;");
 
@@ -83,6 +84,40 @@ foreach ($events as $event) {
     }
 
 }
+
+
+/*$data = mysqli_query($conn, "SELECT DISTINCT `bet_event_cat_name` FROM af_pre_bet_events_cats;");
+
+while ($event = mysqli_fetch_assoc($data)) {
+    $events[] = $event;
+}
+
+foreach ($events as $event) {
+
+    foreach ($event as $key => $string) {
+
+        $event_key = strtoupper(str_replace(' ', '_', $string));
+
+        echo '<br>';
+        echo '<br>';
+        var_dump($translate->detectLanguage($string));
+        echo '<br>';
+        echo '<br>';
+
+        if (isset($lang_data[$event_key])) continue;
+
+        $result = $translate->translate($event, [
+            'source' => 'uk',
+            'target' => 'he'
+        ]);
+
+        echo $lang_data[$event_key] = $result['text'];
+        die();
+
+    }
+
+}
+*/
 
 echo '<pre>';
 print_r($lang_data);

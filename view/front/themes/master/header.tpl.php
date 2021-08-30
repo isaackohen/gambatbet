@@ -100,7 +100,7 @@ if (!defined("_YOYO"))
 
 
                     <?php else: ?>
-                        <div class="item" id="logjoin">
+                        <div class="item login" id="logjoin">
                             <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
                                 $url = "https://";
                             else

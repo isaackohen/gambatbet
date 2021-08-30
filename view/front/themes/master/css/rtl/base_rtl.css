@@ -16,8 +16,10 @@ a.generateslot:hover {
     background: #80cbc4;
 }
 
-
-
+.item.login a {
+    background: #ddd;
+    color: #1f1f1f;
+}
 
 
 /* temporary */
@@ -527,6 +529,7 @@ span.toptr {
 }
 .forhome {
     width:20%;
+    text-align: left;
 }
 .forcenter {
     text-align: center;

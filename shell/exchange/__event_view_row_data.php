@@ -10,19 +10,16 @@ $ucr = mysqli_fetch_assoc(mysqli_query($conn, "SELECT chips, promo FROM users WH
 $bons_balance = $ucr['promo'];
 $chips = $ucr['chips'];
 
-require_once ('../../init.php');
+require_once('../../init.php');
 
 ?>
 
-<div class="excol ileft">
-    <div class="sportscol">
-        <?php include_once('../../../../shell/exchange/top-horizontal-sports.php');?>
-    </div>
-</div>
-
 
 <div class="_row">
+
+
     <div class="_column _one">
+
 
         <style>
             .w-100 {
@@ -30,7 +27,13 @@ require_once ('../../init.php');
             }
         </style>
 
+
+        <div>
+            <?php include_once('top-horizontal-sports.php'); ?>
+        </div>
+
         <div class="_rowdivider w-100">
+
             <?php if ($device == 'desktop'): ?>
                 <!-- FOR FILTER BY SPORTS (SIDEBAR) -->
                 <div class="_divsp tleft">
@@ -43,6 +46,9 @@ require_once ('../../init.php');
                                 <span class="sp_sprit <?php echo $kg['sname']; ?>">!</span>
                                 <a class="datalink<?php echo $kg['bet_event_id']; ?>">
                                     <div id="tmtwrapper"> <?php $br = $kg['bet_event_name'];
+                                        $br = (isset(Dynamic_Lang::$word[Dynamic_Lang::Key($br)])) ? Dynamic_Lang::$word[Dynamic_Lang::Key($br)] : $br;
+                                        $br = str_replace('vs', '-', $br);
+                                        $br = str_replace(' - ', ' - ', $br);
                                         $fn = explode(' - ', $br);
                                         echo '<span class="hmtmt">' . $fn[0] . '</span>';
                                         echo '</br>';
@@ -86,9 +92,11 @@ require_once ('../../init.php');
                 <div class="toplvbhgh"><span class="_lt10"><?= Lang::$word->LIVE_MARKETS; ?></span>
                     <span class="_lt11"><i id="cmrr" class="icon camera alt"></i></span></div>
                 <ul class="splivehome">
-                    <li class="toplvblt cact"><i id="lvice" class="icon icecream"></i> <?= Lang::$word->LIVE_EVENTS; ?></li>
+                    <li class="toplvblt cact"><i id="lvice" class="icon icecream"></i> <?= Lang::$word->LIVE_EVENTS; ?>
+                    </li>
                     <a class="toplvblts" href="/sportsbook-prematch/">
-                        <li class="toplvblt"><i id="rzcmg" class="icon resize"></i> <?= Lang::$word->UPCOMING_EVENTS; ?></li>
+                        <li class="toplvblt"><i id="rzcmg" class="icon resize"></i> <?= Lang::$word->UPCOMING_EVENTS; ?>
+                        </li>
                     </a>
                 </ul>
 

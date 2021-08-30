@@ -33,7 +33,12 @@ $ts_away = $tnr[1];
   </span>
 
 			<a class="onevent" id="<?php echo $query['bet_event_id']; ?>" href="#">
-			<div class="tophg"><?= Lang::$word->LIVE_HIGHLIGHTS; ?></div> <div class="lignss"><span class="sp_sprit <?php echo $query['sname']; ?>">!</span><?php echo $query['event_name']; ?></div>
+			<div class="tophg"><?= Lang::$word->LIVE_HIGHLIGHTS; ?></div>
+
+                <div class="lignss">
+                    <span class="sp_sprit <?php echo $query['sname']; ?>">!</span>
+                    <?php echo $query['event_name']; ?>
+                </div>
 
 			<div class="tpeventwrap">
 			<div class="topshss tp"> <span class="lltm"><i id="ixhome" class="icon shirt"></i> <?php echo $ts_home; ?></span> <span class="rrtm"><?php echo $ss_home; ?></span></div>

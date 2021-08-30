@@ -24,22 +24,22 @@
 		      <div class="scoreDash">
     <div class="kso spo<?php echo $spid;?>" id="predashboard">
 	 
-	 
-	 
-	   <div class="tlogowrap">
-	     <div class="forhome">
-		   <img src="https://<?php echo $baseURL;?>/uploads/bet/blank_home.png">
-		   </div>
-		   <div class="forcenter xp">
-		   <?php echo $team_home;?>
-		   <div class="tmtmdiv">Vs</div>
-		   <?php echo $team_away;?>
-		   </div>
-		   
-		   <div class="foraway">
-		   <img src="https://<?php echo $baseURL;?>/uploads/bet/blank_away.png">
-		   </div>
-		</div>
+
+
+        <div class="tlogowrap">
+            <div class="forhome">
+                <img src="<?php echo SITEURL;?>/uploads/jersey/<?php echo $sr['img_h_id'];?>.png" onerror="this.src='<?php echo SITEURL;?>/uploads/bet/blank_home.png'">
+            </div>
+            <div class="forcenter xp">
+                <?php echo $team_home;?>
+                <div class="tmtmdiv">Vs</div>
+                <?php echo $team_away;?>
+            </div>
+
+            <div class="foraway">
+                <img src="<?php echo SITEURL;?>/uploads/jersey/<?php echo $sr['img_a_id'];?>.png" onerror="this.src='<?php echo SITEURL;?>/uploads/bet/blank_away.png'">
+            </div>
+        </div>
 
 <div class="scoreboard xp">
  <div id="sctopupdates" class="ort">

@@ -114,7 +114,7 @@ a.white {
 a:hover,
 a.hover,
 a:focus {
-  color: #0052ea;
+  color: #edd920;
   transition: all .55s ease;
   outline: none;
   text-decoration: none
